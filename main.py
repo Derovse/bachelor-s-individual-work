@@ -8,7 +8,12 @@ class Field:
         return str(self.value)
 
 class Name(Field):
-    pass
+   class Name(Field):
+    def __init__(self, value):
+        if not value:
+            raise ValueError("ім'я не може бути порожнім")
+        super().__init__(value)
+
     # реалізація класу
     ...
 
